@@ -76,39 +76,40 @@
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 /* Select one of the margin statements below */
 .navbar.notresp navbar-inner {
-margin:         0px 0px;            /* Default position */
-margin-top:     20px;               /* Move down by 20px */
-margin-bottom:  -20px;
-margin-bottom:  20px;               /* Move up by 20px */
-margin-top:     -20px;
-margin-left:    20px;               /* Move right by 20px */
-margin-right:   -20px;
-margin-right:   20px;               /* Move left by 20px */
-margin-left:    -20px;
-margin:         20px 0px 0px 20px;  /* Move down 20px, right 20px */
+margin:             0px 0px;                /* Default position */
+margin-top:         20px;                   /* Move down by 20px */
+margin-bottom:      -20px;
+margin-bottom:      20px;                   /* Move up by 20px */
+margin-top:         -20px;
+margin-left:        20px;                   /* Move right by 20px */
+margin-right:       -20px;
+margin-right:       20px;                   /* Move left by 20px */
+margin-left:        -20px;
+margin:             20px 0px 0px 20px;      /* Move down 20px, right 20px */
 }
 </pre>
 <div class="alert alert-info">
 <h4>Tip: the margin selector typically uses 1, 2 or 4 dimensions as follows:</h4>
 <pre class="lang:css decode:false crayon-selected">
-margin:         10px;                /* Adds 10px to top, right, bottom, left */
-margin:         0px 10px;            /* Adds 0px to top, bottom and 10px to right, left */
-margin:         0px 10px 20px 30px;  /* Adds 0px to top, 10px to right, 20px to bottom, 30px to left */
+margin:             10px;                   /* Adds 10px to top, right, bottom, left */
+margin:             0px 10px;               /* Adds 0px to top, bottom and 10px to right, left */
+margin:             0px 10px 20px 30px;     /* Adds 0px to top, 10px to right, 20px to bottom, 30px to left */
 </pre>
 </div>
 <h4>position:relative|absolute</h4>
-<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">.navbar.notresp navbar-inner {
-position:       relative;
-top:            0px;                 /* Default position */
-left:           0px;                 /* Default position */
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.navbar.notresp navbar-inner {
+position:           relative;
+top:                0px;                    /* Default position */
+left:               0px;                    /* Default position */
 }
 </pre>
 <p>So with similar logic to the margin selector, the Navbar can be moved around the page by adjusting the top/bottom and left/right dimensions:</p>
 <pre class="lang:css decode:true crayon-selected" >
-top:            20px; left: 30px;   /* Down 20px, Right 30px */
-bottom:         -20px; right: -30px;
-top:            -60px; left: -40px; /* Up 60px, Left 40px */
-bottom:         60px; right: 40px;
+top:                20px; left: 30px;       /* Down 20px, Right 30px */
+bottom:             -20px; right: -30px;
+top:                -60px; left: -40px;     /* Up 60px, Left 40px */
+bottom:             60px; right: 40px;
 </pre>
 
 <p>But this code can be improved to use with Responsiveness, ie working on different viewports. As Customizr is built around Twitter Bootstrap 2.3.2, most of the CSS is built in, and we need to customize the defaults.</p>
@@ -116,18 +117,18 @@ bottom:         60px; right: 40px;
 <p>So the code above becomes:</p>
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 .navbar.notresp navbar-inner {
-position:       relative;
-top:            0px;                 /* Default position */
-left:           0%;                  /* Default position */
+position:           relative;
+top:                0px;                    /* Default position */
+left:               0%;                     /* Default position */
 }
 </pre>
 
 <p>And the Navbar can be moved around the page by adjusting the top/bottom and left/right dimensions with positive/negative values:</p>
 <pre class="lang:css decode:true crayon-selected" >
-top:            20px; left: 30%;   /* Down 20px, Right 30% */
-bottom:         -20px; right: -30%;
-top:            -60px; left: -40%; /* Up 60px, Left 40% */
-bottom:         60px; right: 40%;
+top:                20px; left: 30%;        /* Down 20px, Right 30% */
+bottom:             -20px; right: -30%;
+top:                -60px; left: -40%;      /* Up 60px, Left 40% */
+bottom:             60px; right: 40%;
 </pre>
 <div class="alert alert-info">
 <h4>Tip: Advanced users may wish to look ahead for an alternative php solution</h4>
@@ -138,16 +139,16 @@ bottom:         60px; right: 40%;
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 /*  Adjust Navbar Box settings      */
  .tc-header, .navbar.notresp .navbar-inner  {
-background-color: pink;                                         /* Change pink */
-background-image: linear-gradient(to bottom, white, pink);      /* Change white, pink */
-background-image: -webkit-linear-gradient (top, white, pink);   /* Change white, pink */
-background-repeat: repeat-x;
-border:           1px solid pink;                               /* Change [1]px, pink */
-border-radius:    4px 4px 4px 4px;                              /* Change [4]px */
-box-shadow:       0 1px 4px rgba(0, 0, 0, 0.067);
-min-height:       40px;                                         /* Change [40]px */
-padding-left:     20px;                                         /* Change [20]px */
-padding-right:    20px;                                         /* Change [20]px */
+background-color:   pink;                   /* Change pink */
+background-image:   linear-gradient(to bottom, white, pink);      /* Change white, pink */
+background-image:   -webkit-linear-gradient (top, white, pink);   /* Change white, pink */
+background-repeat:  repeat-x;
+border:             1px solid pink;         /* Change [1]px, pink */
+border-radius:      4px 4px 4px 4px;        /* Change [4]px */
+box-shadow:         0 1px 4px rgba(0, 0, 0, 0.067);
+min-height:         40px;                   /* Change [40]px */
+padding-left:       20px;                   /* Change [20]px */
+padding-right:      20px;                   /* Change [20]px */
 }
 </pre>
 
@@ -155,7 +156,7 @@ padding-right:    20px;                                         /* Change [20]px
 <p>You may wish to hide the Navbar Box surrounding the menu items:</p>
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 .navbar.notresp .navbar-inner {
-display:    none;                   /* Hide the Navbar Box */
+display:            none;                   /* Hide the Navbar Box */
 }
 </pre>
 
@@ -164,9 +165,9 @@ display:    none;                   /* Hide the Navbar Box */
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 /* Select one height setting */
 .tc-header {
-min-height: 45px;                   /* Adjust [45]px to suit */
-height:     60px;                   /* Adjust [60]px to suit */
-max-height: 75px;                   /* Adjust [75]px to suit */
+min-height:         45px;                   /* Adjust [45]px to suit */
+height:             60px;                   /* Adjust [60]px to suit */
+max-height:         75px;                   /* Adjust [75]px to suit */
 }
 </pre>
 
@@ -174,8 +175,8 @@ max-height: 75px;                   /* Adjust [75]px to suit */
 <p>You may wish to remove the colored & grey bars at the top/bottom:</p>
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 .tc-header {
-border-top: none;                   /* Remove colored bar */
-border-bottom: none;                /* Remove grey bar */
+border-top:         none;                   /* Remove colored bar */
+border-bottom:      none;                   /* Remove grey bar */
 }
 </pre>
 
@@ -251,12 +252,12 @@ border-bottom: none;                /* Remove grey bar */
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 /* Navbar 1 */
 .navbar.notresp .nav > li > a {
-border: 1px solid green;        /* Add a border */
-border-radius: 4px 4px 4px 4px; /* Rounded corners */
-background-color: yellow;       /* Change yellow */
-background-image: linear-gradient(to bottom, white, yellow);    /* Change white, yellow */
-background-image: -webkit-linear-gradient (top, white, yellow); /* Change white, yellow */
-background-repeat: repeat-x;    /* Add shading */
+border:             1px solid green;        /* Add a border */
+border-radius:      4px 4px 4px 4px;        /* Rounded corners */
+background-color:   yellow;                 /* Change yellow */
+background-image:   linear-gradient(to bottom, white, yellow);    /* Change white, yellow */
+background-image:   -webkit-linear-gradient (top, white, yellow); /* Change white, yellow */
+background-repeat:  repeat-x;               /* Add shading */
 }
 </pre>
 
@@ -264,13 +265,13 @@ background-repeat: repeat-x;    /* Add shading */
 <a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG009-Hover-Menu-Item.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG009-Hover-Menu-Item.png" alt="NG009 Hover Menu Item" class="alignnone size-full wp-image-169" /></a>
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 .navbar.notresp .nav > li > a:hover {
-border: 1px solid green;        /* Add a border */
-border-radius: 4px 4px 4px 4px; /* Rounded corners */
-color: yellow;                  /* Yellow Text on hover */
-background-color: darkgreen;    /* Change darkgreen */
-background-image: linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
-background-image: -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
-background-repeat: repeat-x;    /* Add shading */
+border:             1px solid green;        /* Add a border */
+border-radius:      4px 4px 4px 4px;        /* Rounded corners */
+color:              yellow;                 /* Yellow Text on hover */
+background-color:   darkgreen;              /* Change darkgreen */
+background-image:   linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
+background-image:   -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
+background-repeat:  repeat-x;               /* Add shading */
 }
 </pre>
 
@@ -278,8 +279,10 @@ background-repeat: repeat-x;    /* Add shading */
 <h4>Tip: Because CSS executes serially, the hover code above need only contain the delta changes:</h4>
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 .navbar.notresp .nav > li > a:hover {
-background-image: linear-gradient(to bottom, yellow, blue);    /* Change yellow, blue */
-background-image: -webkit-linear-gradient (top, yellow, blue); /* Change yellow, blue */
+color:              yellow;                 /* Yellow Text on hover */
+background-color:   darkgreen;              /* Change darkgreen */
+background-image:   linear-gradient(to bottom, yellow, blue);    /* Change yellow, blue */
+background-image:   -webkit-linear-gradient (top, yellow, blue); /* Change yellow, blue */
 }
 </pre>
 </div>
@@ -290,13 +293,12 @@ background-image: -webkit-linear-gradient (top, yellow, blue); /* Change yellow,
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 /* Navbar 2 */
 .navbar.notresp .nav > li {
-margin: 0px -5px;                   /* Adjust top/bottom + left/right */
+margin:             0px -5px;               /* Adjust top/bottom + left/right */
 }
-.navbar.notresp .nav > li > a, .navbar.notresp .nav > li > a:hover {
-border-radius: 0px 0px 0px 0px;     /* No Rounded corners */
-min-width: 100px;                   /* Fixed width */
-min-height: 30px;                   /* Fixed height */
-vertical-align: middle;             /* Align text */
+.navbar.notresp .nav > li > a {
+border-radius:      0px 0px 0px 0px;        /* No Rounded corners */
+min-width:          100px;                  /* Fixed width */
+min-height:         30px;                   /* Fixed height */
 }
 </pre>
 
@@ -304,29 +306,29 @@ vertical-align: middle;             /* Align text */
 <a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG011-Shaded-Menu-Item.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG011-Shaded-Menu-Item.png" alt="NG011 Shaded Menu Item" class="alignnone size-full wp-image-122" /></a>
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 .navbar.notresp .nav > li > a {
-border: 1px solid yellow;           /* Add a border */
-border-radius: 0px 0px 0px 0px;     /* No Rounded corners */
-color: white;                       /* White text */
-background-color: black;            /* Change black */
-background-image: linear-gradient(to bottom, grey, black);    /* Change grey, black */
-background-image: -webkit-linear-gradient (top, grey, black); /* Change grey, black */
-background-repeat: repeat-x;        /* Add shading */
+border:             1px solid yellow;       /* Add a border */
+border-radius:      0px 0px 0px 0px;        /* No Rounded corners */
+color:              white;                  /* White text */
+background-color:   black;                  /* Change black */
+background-image:   linear-gradient(to bottom, grey, black);    /* Change grey, black */
+background-image:   -webkit-linear-gradient (top, grey, black); /* Change grey, black */
+background-repeat:  repeat-x;               /* Add shading */
 }
 .navbar.notresp .nav > li > a:hover {
-border: 1px solid yellow;           /* Add a border */
-border-radius: 0px 0px 0px 0px;     /* No Rounded corners */
-color: red;                         /* Red Text on hover */
-background-color: black;            /* Change black */
-background-image: linear-gradient(to bottom, grey, black);    /* Change grey, black */
-background-image: -webkit-linear-gradient (top, grey, black); /* Change grey, black */
-background-repeat: repeat-x;        /* Add shading */
+border:             1px solid yellow;       /* Add a border */
+border-radius:      0px 0px 0px 0px;        /* No Rounded corners */
+color:              red;                    /* Red Text on hover */
+background-color:   black;                  /* Change black */
+background-image:   linear-gradient(to bottom, grey, black);    /* Change grey, black */
+background-image:   -webkit-linear-gradient (top, grey, black); /* Change grey, black */
+background-repeat:  repeat-x;               /* Add shading */
 }
 /* Shade the current selected menu item */
 .navbar.notresp .nav > li.current-menu-item > a, .navbar.notresp .nav > li.current-menu-ancestor > a {
-color: yellow;                         /* Yellow Text on hover */
-background-color: darkgreen;           /* Change darkgreen */
-background-image: linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
-background-image: -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
+color:              yellow;                 /* Yellow Text on hover */
+background-color:   darkgreen;              /* Change darkgreen */
+background-image:   linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
+background-image:   -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
 }
 </pre>
 
@@ -380,41 +382,41 @@ This results in the following coding to achieve the image above:
 /* Navbar 2 */
 /* Sizing */
 .navbar.notresp .nav > li {
-margin: 0px -5px;                   /* Adjust top/bottom + left/right */
+margin:             0px -5px;               /* Adjust top/bottom + left/right */
 }
 .navbar.notresp .nav > li > a, .navbar.notresp .nav > li > a:hover {
-border-radius: 0px 0px 0px 0px;     /* No Rounded corners */
-min-width: 100px;                   /* Fixed width */
-min-height: 30px;                   /* Fixed height */
-vertical-align: middle;             /* Align text */
+border-radius:      0px 0px 0px 0px;        /* No Rounded corners */
+min-width:          100px;                  /* Fixed width */
+min-height:         30px;                   /* Fixed height */
+vertical-align:     middle;                 /* Align text */
 }
 /* Shading */
 .navbar.notresp .nav > li > a, ul.dropdown-menu, ul.dropdown-submenu, 
 .dropdown-menu > li > a, .dropdown-submenu > li > a, .dropdown-menu > li.current-menu-ancestor > a,
 .navbar.notresp .nav > li > a:focus, .dropdown-menu > li > a:focus, .dropdown-submenu:focus > li > a {
-border: 1px solid yellow;           /* Add a border */
-color: white;                       /* White text */
-background-color: black;           /* Change black */
-background-image: linear-gradient(to bottom, grey, black);    /* Change grey, black */
-background-image: -webkit-linear-gradient (top, grey, black); /* Change grey, black */
-background-repeat: repeat-x;        /* Add shading */
+border:             1px solid yellow;       /* Add a border */
+color:              white;                  /* White text */
+background-color:   black;                  /* Change black */
+background-image:   linear-gradient(to bottom, grey, black);    /* Change grey, black */
+background-image:   -webkit-linear-gradient (top, grey, black); /* Change grey, black */
+background-repeat:  repeat-x;               /* Add shading */
 }
 .navbar.notresp .nav > li > a:hover, .dropdown-menu > li:hover > a, .dropdown-menu > li > a:hover, .dropdown-submenu:hover > li > a, 
 .navbar.notresp .nav > li > a:focus, .dropdown-menu > li:focus > a, .dropdown-menu > li > a:focus, .dropdown-submenu:focus > li > a, 
 .navbar.notresp .nav > li.current-menu-item > a, .navbar.notresp .nav > li.current-menu-ancestor > a,
 .dropdown-menu > li.current-menu-item > a, .dropdown-menu > li.current-menu-ancestor > a,
 .dropdown-submenu > li.current-menu-ancestor > a, .dropdown-menu > li:hover > a   {
-color: yellow;                         /* Yellow Text on hover */
-background-color: darkgreen;            /* Change darkgreen */
-background-image: linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
-background-image: -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
+color:              yellow;                 /* Yellow Text on hover */
+background-color:   darkgreen;              /* Change darkgreen */
+background-image:   linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
+background-image:   -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
 }
 /* Hide surrounds */
 .navbar ul.nav, ul.dropdown-menu, ul.dropdown-submenu {
-background:red;
-background-color: rgba(0, 0, 0, 0);
-border: none;
-box-shadow:none;
+background:         red;
+background-color:   rgba(0, 0, 0, 0);
+border:             none;
+box-shadow:         none;
 }
 </pre>
 
@@ -424,11 +426,11 @@ box-shadow:none;
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 /* Adds a colored bar to top of menu item */
 .navbar.notresp .nav > li > a {
-margin: 0px 5px;                            /* Separates menu items */
-border-top: 4px solid green;                /* Change [green]       */
+margin:             0px 5px;                /* Separates menu items */
+border-top:         4px solid green;        /* Change [green]       */
 }
 .navbar.notresp .nav > li > a:hover {
-border-top: 4px solid yellow;               /* Change [yellow]      */
+border-top:         4px solid yellow;       /* Change [yellow]      */
 }
 </pre>
 <h3>Adding colored bars to menu item top (intermediate)</h3>
@@ -441,13 +443,13 @@ border-top: 4px solid yellow;               /* Change [yellow]      */
 <li>Add a list of possible classes into the CSS. Could be based on color, topic, category for example. Multiple classes are allowed</li>
 <p>Here is an example of CSS classes which might be used:</p>
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
-.bt-home, .bt-red {border-top: 4px solid red;}
-.bt-blog, .bt-orange {border-top: 4px solid orange;}
-.bt-normal, .bt-yellow {border-top: 4px solid yellow;}
-.bt-navbar, .bt-green {border-top: 4px solid green;}
-.bt-blue {border-top: 4px solid blue;}
-.bt-indigo {border-top: 4px solid indigo;}
-.bt-violet {border-top: 4px solid violet;}
+.bt-home, .bt-red       {border-top: 4px solid red;}
+.bt-blog, .bt-orange    {border-top: 4px solid orange;}
+.bt-normal, .bt-yellow  {border-top: 4px solid yellow;}
+.bt-navbar, .bt-green   {border-top: 4px solid green;}
+.bt-blue                {border-top: 4px solid blue;}
+.bt-indigo              {border-top: 4px solid indigo;}
+.bt-violet              {border-top: 4px solid violet;}
 </pre>
 <li>Assign classes to each menu item</li>
 <a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG016-Menu-Class.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG016-Menu-Class.png" alt="NG016 Menu Class" class="alignnone size-full wp-image-142" /></a>
@@ -468,10 +470,10 @@ border-top: 4px solid yellow;               /* Change [yellow]      */
 These can be removed or changed using:
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 .navbar .nav > li > a, .dropdown-menu > li > a, .dropdown-submenu > li > a {
-text-shadow:        none;               /* Remove text shadow */
+text-shadow:        none;                   /* Remove text shadow */
 }
 .navbar .nav > li > a:first-letter {
-font-size:          17px;               /* Change [17]px first letter */
+font-size:          17px;                   /* Change [17]px first letter */
 /* If default is 1em/100%, try adjusting using 1.2em/120% or 0.8em/80% for example */
 }
 </pre>
@@ -499,13 +501,13 @@ font-size:          17px;               /* Change [17]px first letter */
 <h3>Responsiveness</h3>
 <p>If you are unfamiliar with the concept of Responsiveness, then start by reviewing this <a href="http://www.themesandco.com/snippet/media-queries-responsiveness/" target="_blank">Snippet </a></p>
 <p>Twitter Bootstrap defines the point at which Customizer changes the menu structure. At 979/980px width, the menu reduces to a 3-bar button. By clicking on the button, Level 2+ menu items are revealed.</p>
-<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG014-3-bar-menu.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG014-3-bar-menu.png" alt="NG014 3-bar menu" width="200" height="127" class="alignnone size-full wp-image-95" /></a>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG018-3-bar-menu-e1401368175275.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG018-3-bar-menu-e1401368175275.png" alt="NG018 3-bar menu" class="alignnone size-full wp-image-185" /></a>
 <p>Just like the full navbar, these menu items need to be styled using similar CSS properties. A new set of selectors is now required:</p>
 
 <pre class="lang:css decode:true crayon-selected" >
-.navbar.notresp .nav {}   /* Non-responsive */
-.navbar.resp    .nav {}   /* Responsive     */
-.navbar         .nav {}   /* Either non-resp or resp */
+.navbar.notresp .nav {}                     /* Non-responsive */
+.navbar.resp    .nav {}                     /* Responsive     */
+.navbar         .nav {}                     /* Either non-resp or resp */
 </pre>
 
 <pre class="html decode:true crayon-selected" title="Generated HTML">
@@ -568,40 +570,40 @@ font-size:          17px;               /* Change [17]px first letter */
 <p>When adjusting Navbar styling, you will need to decide whether the styling applies to both non-responsive and/or responsive items. For example, consider the impact of these 3 selectors:</p>
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 .navbar .nav > li > a {
-color:      blue;   /* Generic menu item */
+color:              blue;                   /* Generic menu item */
 }
 .navbar.notresp .nav > li > a {
-color:      red;    /* Fullsize menu item */
+color:              red;                    /* Fullsize menu item */
 }
 .navbar.resp .nav > li > a {
-color:      green;  /* 3-bar menu item */
+color:              green;                  /* 3-bar menu item */
 }
 </pre>
 <p>Take a look at the CSS Structure for the Navbar in the Appendix and it should become clearer to you.</p>
 <p>So to complete the responsive 3-bar dropdown and the fullsize menu, the final code we'll use is:</p>
-<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG018-3-bar-menu.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG018-3-bar-menu.png" alt="NG018 3-bar menu" class="alignnone size-full wp-image-154" /></a>
+
 <pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
 /* Navbar 3 */
 /* Sizing */
 .navbar .nav > li {
-margin:             0px -5px;           /* Adjust top/bottom + left/right */
+margin:             0px -5px;               /* Adjust top/bottom + left/right */
 }
 .navbar.notresp .nav > li > a, .navbar.notresp .nav > li > a:hover {
-border-radius:      0px 0px 0px 0px;    /* No Rounded corners */
-min-width:          110px;              /* Fixed width */
-min-height:         30px;               /* Fixed height */
-vertical-align:     middle;             /* Align text */
+border-radius:      0px 0px 0px 0px;        /* No Rounded corners */
+min-width:          110px;                  /* Fixed width */
+min-height:         30px;                   /* Fixed height */
+vertical-align:     middle;                 /* Align text */
 }
 /* Shading */
 .navbar .nav > li > a, ul.dropdown-menu, ul.dropdown-submenu, 
 .dropdown-menu > li > a, .dropdown-submenu > li > a, .dropdown-menu > li.current-menu-ancestor > a,
 .navbar .nav > li > a:focus, .dropdown-menu > li > a:focus, .dropdown-submenu:focus > li > a,
 .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a  {
-border:             1px solid yellow;   /* Add a border */
-color:              white;              /* White text */
+border:             1px solid yellow;       /* Add a border */
+color:              white;                  /* White text */
 font-weight:        bold;
-text-shadow:        none;               /* Remove text shadow */
-background-color:   black;              /* Change black */
+text-shadow:        none;                   /* Remove text shadow */
+background-color:   black;                  /* Change black */
 background-image:   linear-gradient(to bottom, grey, black);    /* Change grey, black */
 background-image:   -webkit-linear-gradient (top, grey, black); /* Change grey, black */
 background-repeat:  repeat-x;           
@@ -611,9 +613,9 @@ background-repeat:  repeat-x;
 .navbar .nav > li.current-menu-item > a, .navbar .nav > li.current-menu-ancestor > a,
 .dropdown-menu > li.current-menu-item > a, .dropdown-menu > li.current-menu-ancestor > a,
 .dropdown-submenu > li.current-menu-ancestor > a, .dropdown-menu > li:hover > a   {
-color:              yellow;             /* Yellow Text on hover */
+color:              yellow;                 /* Yellow Text on hover */
 font-weight:        bold;
-background-color:   darkgreen;          /* Change darkgreen */
+background-color:   darkgreen;              /* Change darkgreen */
 background-image:   linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
 background-image:   -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
 }
@@ -622,14 +624,14 @@ background-image:   -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change
 .navbar ul.nav, .navbar ul.dropdown-menu, .navbar ul.dropdown-submenu,
 .navbar .nav-collapse.tc-hover-menu-wrapper {
 background:         red;
-background-color:   rgba(0, 0, 0, 0);   /* Transparent */
+background-color:   rgba(0, 0, 0, 0);       /* Transparent */
 border:             none;
 box-shadow:         none;
 }
 /* Fixed width on 3-bar menu */
 .navbar.resp ul.nav, .navbar.resp ul.dropdown-menu, .navbar.resp ul.dropdown-submenu,
 .navbar.resp .nav-collapse.tc-hover-menu-wrapper {
-min-width:          180px;          /* Adjust to need */
+min-width:          180px;                  /* Adjust to need */
 }
 </pre>
 
@@ -962,5 +964,5 @@ content: '\f103';   /* Navbar */
 </div>
 
 </div>
-<h2>Credits: Dave Bardell (@rdellconsulting)</h2>
+<h4>Credits: Dave Bardell (@rdellconsulting)</h4>
 </div>
