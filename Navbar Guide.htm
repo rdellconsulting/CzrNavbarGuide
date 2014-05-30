@@ -1,0 +1,966 @@
+<div class="guide">
+<div id="introduction">
+<p>Just about every website you see these days will almost certainly contain a Navbar to enable the User to navigate around the various Pages you have built. By now, you will be familiar with Customizr's own Navbar, part of its' unique style.
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG001-Navbar.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG001-Navbar.png" alt="NG001 Navbar" class="alignnone size-full wp-image-44" /></a></p>
+
+<p>It is a common request on the Forum to customize the Navbar, and you will find a number of Snippets that address this subject.</p>
+
+<p>This Guide is intended to take these Snippets a bit further and show you ideas on how you might change the look-and-feel of your Navbar in order to personalize the style of your website.</p>
+</div>
+
+<div id="basics">
+<h2>Basics required</h2>
+<p>Before we start, let's make sure that you understand the basics. If you are an Advanced User then feel free to skip this next bit.</p>
+
+<ul>
+<li>HTML: Have to assume you know this or you wouldn't be reading this Guide.</li>
+<li>CSS: Most of this Guide will cover this area. You may find these <a href="http://www.themesandco.com/?s=navbar" target="_blank">Navbar Snippets</a> useful as an Introduction.</li>
+<li>PHP: You don't need to understand PHP, but some of the Snippets use PHP so make sure you cut&amp;paste accurately.</li>
+<li>Javascript: May need to add some Javascript for some effects. Again, no need to understand, just cut&amp;paste accurately.</li>
+<li>Child Theme: You must know by now that we highly recommend using a child theme. Do not hack core files. For more information, read this <a href="http://www.themesandco.com/customizr/how-to-customize-customizr-wordpress-theme/" target="_blank">Guide</a>.</li>
+</ul>
+
+<div class="alert alert-info">
+<h4>Tip: To cut&amp;paste from Snippets:</h4>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG003-Snippet-editor.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG003-Snippet-editor.png" alt="NG003 Snippet editor" class="alignnone size-full wp-image-46" /></a>
+<p>Step 1: Remove numbers using button 1</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG004-Snippet-editor.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG004-Snippet-editor.png" alt="NG004 Snippet editor" class="alignnone size-full wp-image-47" /></a>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG005-Snippet-editor.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG005-Snippet-editor.png" alt="NG005 Snippet editor" class="alignnone size-full wp-image-48" /></a>
+<p>Step 2: Cut&amp;Paste using button 4</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG006-Snippet-editor.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG006-Snippet-editor.png" alt="NG006 Snippet editor" class="alignnone size-full wp-image-49" /></a>
+</div>
+
+<h2>Customizr Navbar Core Components</h2>
+<p>This is what the default Customizr Navbar looks like:</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG002-Navbar-Box.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG002-Navbar-Box.png" alt="NG002 Navbar Box" class="alignnone size-full wp-image-45" /></a>
+
+<p>Let's break this down into its' core components.</p>
+
+<table class="table table-striped">
+<thead>
+<tr><th>Item</th><th>Description</th><th>CSS Selector</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Social Icons</td>
+<td>float:left inside the Navbar Box</td>
+<td>.navbar-inner .social-block</td>
+</tr>
+<tr>
+<td>Tagline</td>
+<td>float:right inside the Navbar Box</td>
+<td>h2.site-description</td>
+</tr>
+<tr>
+<td>Menu (Items)</td>
+<td>float:left inside the Navbar Box</td>
+<td>.navbar .nav > li > a</td>
+</tr>
+<tr>
+<td>Navbar Box</td>
+<td>surrounds the outside of the Navbar</td>
+<td>.navbar.notresp .navbar-inner</td>
+</tr>
+</tbody>
+</table>
+
+<div class="alert alert-warning"><h4><strong>This Guide will focus on the Navbar Box and the Menu Items</strong></h4></div>
+</div>
+
+<div id="navbarbox">
+<h2>The Navbar Box</h2>
+
+<h3>Positioning the Navbar Box</h3>
+<p>There are 2 simple ways in CSS to reposition the Navbar:</p>
+<h4>margin|margin-top|margin-right|margin-bottom|margin-left</h4>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+/* Select one of the margin statements below */
+.navbar.notresp navbar-inner {
+margin:         0px 0px;            /* Default position */
+margin-top:     20px;               /* Move down by 20px */
+margin-bottom:  -20px;
+margin-bottom:  20px;               /* Move up by 20px */
+margin-top:     -20px;
+margin-left:    20px;               /* Move right by 20px */
+margin-right:   -20px;
+margin-right:   20px;               /* Move left by 20px */
+margin-left:    -20px;
+margin:         20px 0px 0px 20px;  /* Move down 20px, right 20px */
+}
+</pre>
+<div class="alert alert-info">
+<h4>Tip: the margin selector typically uses 1, 2 or 4 dimensions as follows:</h4>
+<pre class="lang:css decode:false crayon-selected">
+margin:         10px;                /* Adds 10px to top, right, bottom, left */
+margin:         0px 10px;            /* Adds 0px to top, bottom and 10px to right, left */
+margin:         0px 10px 20px 30px;  /* Adds 0px to top, 10px to right, 20px to bottom, 30px to left */
+</pre>
+</div>
+<h4>position:relative|absolute</h4>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">.navbar.notresp navbar-inner {
+position:       relative;
+top:            0px;                 /* Default position */
+left:           0px;                 /* Default position */
+}
+</pre>
+<p>So with similar logic to the margin selector, the Navbar can be moved around the page by adjusting the top/bottom and left/right dimensions:</p>
+<pre class="lang:css decode:true crayon-selected" >
+top:            20px; left: 30px;   /* Down 20px, Right 30px */
+bottom:         -20px; right: -30px;
+top:            -60px; left: -40px; /* Up 60px, Left 40px */
+bottom:         60px; right: 40px;
+</pre>
+
+<p>But this code can be improved to use with Responsiveness, ie working on different viewports. As Customizr is built around Twitter Bootstrap 2.3.2, most of the CSS is built in, and we need to customize the defaults.</p>
+<p>For height we use px, but for width we use %.</p>
+<p>So the code above becomes:</p>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.navbar.notresp navbar-inner {
+position:       relative;
+top:            0px;                 /* Default position */
+left:           0%;                  /* Default position */
+}
+</pre>
+
+<p>And the Navbar can be moved around the page by adjusting the top/bottom and left/right dimensions with positive/negative values:</p>
+<pre class="lang:css decode:true crayon-selected" >
+top:            20px; left: 30%;   /* Down 20px, Right 30% */
+bottom:         -20px; right: -30%;
+top:            -60px; left: -40%; /* Up 60px, Left 40% */
+bottom:         60px; right: 40%;
+</pre>
+<div class="alert alert-info">
+<h4>Tip: Advanced users may wish to look ahead for an alternative php solution</h4>
+</div>
+
+<h2>Other Navbar Box changes</h2>
+<h3>Adjusting the Navbar Box settings</h3>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+/*  Adjust Navbar Box settings      */
+ .tc-header, .navbar.notresp .navbar-inner  {
+background-color: pink;                                         /* Change pink */
+background-image: linear-gradient(to bottom, white, pink);      /* Change white, pink */
+background-image: -webkit-linear-gradient (top, white, pink);   /* Change white, pink */
+background-repeat: repeat-x;
+border:           1px solid pink;                               /* Change [1]px, pink */
+border-radius:    4px 4px 4px 4px;                              /* Change [4]px */
+box-shadow:       0 1px 4px rgba(0, 0, 0, 0.067);
+min-height:       40px;                                         /* Change [40]px */
+padding-left:     20px;                                         /* Change [20]px */
+padding-right:    20px;                                         /* Change [20]px */
+}
+</pre>
+
+<h3>Hiding the Navbar Box</h3>
+<p>You may wish to hide the Navbar Box surrounding the menu items:</p>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.navbar.notresp .navbar-inner {
+display:    none;                   /* Hide the Navbar Box */
+}
+</pre>
+
+<h3>Adjusting the white space between the colored & grey bars</h3>
+<p>You may wish to adjust the whitespace between the two bars in the Header:</p>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+/* Select one height setting */
+.tc-header {
+min-height: 45px;                   /* Adjust [45]px to suit */
+height:     60px;                   /* Adjust [60]px to suit */
+max-height: 75px;                   /* Adjust [75]px to suit */
+}
+</pre>
+
+<h3>Removing the top/bottom bars</h3>
+<p>You may wish to remove the colored & grey bars at the top/bottom:</p>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.tc-header {
+border-top: none;                   /* Remove colored bar */
+border-bottom: none;                /* Remove grey bar */
+}
+</pre>
+
+<h2>Centering the Navbar Box</h2>
+<p>To make the rest of this Guide easier to use, let's customize the Header by hiding the Logo, the Social icons, the Tagline; Hiding the Navbar Box; and Centering the remaining Menu Items. Follow this <a href="http://www.themesandco.com/snippet/center-header-block-items/" target="_blank">Snippet (CSS) </a>to get all that done.</p>
+<p>We're now left with a centered Navbar containing Menu Items:</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG007-Centered-Menu-Items.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG007-Centered-Menu-Items.png" alt="NG007 Centered Menu Items" class="alignnone size-full wp-image-50" /></a>
+<p>Here's how the HTML looks now:</p>
+<pre class="lang:default decode:true crayon-selected" title="Generated HTML">
+    <div class="navbar-wrapper clearfix">
+        <div class="navbar notresp row-fluid pull-left">
+            <div class="navbar-inner" role="navigation">
+                <div class="row-fluid">
+                    <div class="social-block span12">
+                        <h2 class="span12 inside site-description">Just another WordPress site</h2>
+                        <div class="nav-collapse collapse tc-hover-menu-wrapper">
+                            <div class="menu-newmenu2-container">
+                                <ul id="menu-newmenu2" class="nav tc-hover-menu">
+                                    <li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81">
+                                        <a href="http://www.customizr.dev/">Home</a>
+                                    </li>
+                                    <li id="menu-item-241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-241">
+                                        <a href="http://www.customizr.dev/blog/">Blog</a>
+                                    </li>
+                                    <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-240">
+                                        <a href="http://www.customizr.dev/normal/">
+                                            Normal
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li id="menu-item-239" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-239">
+                                                <a href="http://www.customizr.dev/sub-normal-1/">Sub-Normal 1</a>
+                                            </li>
+                                            <li id="menu-item-238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown-submenu menu-item-238">
+                                                <a href="http://www.customizr.dev/sub-normal-2/">Sub-Normal 2</a>
+                                                <ul class="dropdown-menu">
+                                                    <li id="menu-item-237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-237">
+                                                        <a href="http://www.customizr.dev/sub-normal-2-1/">Sub-Normal 2-1</a>
+                                                    </li>
+                                                    <li id="menu-item-236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-236">
+                                                        <a href="http://www.customizr.dev/sub-normal-2-2/">Sub-Normal 2-2</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li id="menu-item-348" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-346 current_page_item menu-item-348">
+                                        <a href="http://www.customizr.dev/navbar-guide/">Navbar Guide</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</pre>
+</div>
+
+
+<div id="menuitems">
+<h2>Menu Items</h2>
+<p>These Menu items are setup using Dashboard&gt;Appearance&gt;Menus</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG012-Dashboard-Appearance-Menu.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG012-Dashboard-Appearance-Menu.png" alt="NG012 Dashboard-Appearance-Menu" class="alignnone size-full wp-image-55" /></a>
+
+
+<p>We'll start by looking at Level 1 items, ie without any sub-menus.</p>
+
+<h3>Shading Menu Items</h3>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG008-Shaded-Menu-Items.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG008-Shaded-Menu-Items.png" alt="NG008 Shaded Menu Items" class="alignnone size-full wp-image-51" /></a>
+<p>For this we need to use the following selector/properties:</p>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+/* Navbar 1 */
+.navbar.notresp .nav > li > a {
+border: 1px solid green;        /* Add a border */
+border-radius: 4px 4px 4px 4px; /* Rounded corners */
+background-color: yellow;       /* Change yellow */
+background-image: linear-gradient(to bottom, white, yellow);    /* Change white, yellow */
+background-image: -webkit-linear-gradient (top, white, yellow); /* Change white, yellow */
+background-repeat: repeat-x;    /* Add shading */
+}
+</pre>
+
+<p>And change color when mouse hovers:</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG009-Hover-Menu-Item.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG009-Hover-Menu-Item.png" alt="NG009 Hover Menu Item" class="alignnone size-full wp-image-169" /></a>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.navbar.notresp .nav > li > a:hover {
+border: 1px solid green;        /* Add a border */
+border-radius: 4px 4px 4px 4px; /* Rounded corners */
+color: yellow;                  /* Yellow Text on hover */
+background-color: darkgreen;    /* Change darkgreen */
+background-image: linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
+background-image: -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
+background-repeat: repeat-x;    /* Add shading */
+}
+</pre>
+
+<div class="alert alert-info">
+<h4>Tip: Because CSS executes serially, the hover code above need only contain the delta changes:</h4>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.navbar.notresp .nav > li > a:hover {
+background-image: linear-gradient(to bottom, yellow, blue);    /* Change yellow, blue */
+background-image: -webkit-linear-gradient (top, yellow, blue); /* Change yellow, blue */
+}
+</pre>
+</div>
+
+<h3>Changing the gap between Menu Items</h3>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG010-Shaded-Menu-Item-2.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG010-Shaded-Menu-Item-2.png" alt="NG010 Shaded Menu Item" class="alignnone size-full wp-image-53" /></a>
+<p>For this we need to use the margin property:</p>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+/* Navbar 2 */
+.navbar.notresp .nav > li {
+margin: 0px -5px;                   /* Adjust top/bottom + left/right */
+}
+.navbar.notresp .nav > li > a, .navbar.notresp .nav > li > a:hover {
+border-radius: 0px 0px 0px 0px;     /* No Rounded corners */
+min-width: 100px;                   /* Fixed width */
+min-height: 30px;                   /* Fixed height */
+vertical-align: middle;             /* Align text */
+}
+</pre>
+
+<p>And now change the background colors:</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG011-Shaded-Menu-Item.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG011-Shaded-Menu-Item.png" alt="NG011 Shaded Menu Item" class="alignnone size-full wp-image-122" /></a>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.navbar.notresp .nav > li > a {
+border: 1px solid yellow;           /* Add a border */
+border-radius: 0px 0px 0px 0px;     /* No Rounded corners */
+color: white;                       /* White text */
+background-color: black;            /* Change black */
+background-image: linear-gradient(to bottom, grey, black);    /* Change grey, black */
+background-image: -webkit-linear-gradient (top, grey, black); /* Change grey, black */
+background-repeat: repeat-x;        /* Add shading */
+}
+.navbar.notresp .nav > li > a:hover {
+border: 1px solid yellow;           /* Add a border */
+border-radius: 0px 0px 0px 0px;     /* No Rounded corners */
+color: red;                         /* Red Text on hover */
+background-color: black;            /* Change black */
+background-image: linear-gradient(to bottom, grey, black);    /* Change grey, black */
+background-image: -webkit-linear-gradient (top, grey, black); /* Change grey, black */
+background-repeat: repeat-x;        /* Add shading */
+}
+/* Shade the current selected menu item */
+.navbar.notresp .nav > li.current-menu-item > a, .navbar.notresp .nav > li.current-menu-ancestor > a {
+color: yellow;                         /* Yellow Text on hover */
+background-color: darkgreen;           /* Change darkgreen */
+background-image: linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
+background-image: -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
+}
+</pre>
+
+<h3>Multi-level Menu Items</h3>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG013-Multi-level-Items.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG013-Multi-level-Items.png" alt="NG013 Multi-level Items"  class="alignnone size-full wp-image-130" /></a>
+<p>So far, we have addressed Menu Items sitting at Level 1 ie the top-level menu. But, of course, menus often sink down to 2, 3 or more levels and we need to be able style them as well.</p>
+<p>The principles of styling are similar to Level 1, we need to understand how to identify the selectors.
+Take a look at the HTML for the 'Normal' Menu Items in our example:</p>
+<pre class="html decode:true crayon-selected" title="Generated HTML">
+    <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-240">
+        <a href="http://www.customizr.dev/normal/">
+            Normal
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li id="menu-item-239" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-239">
+                <a href="http://www.customizr.dev/sub-normal-1/">Sub-Normal 1</a>
+            </li>
+            <li id="menu-item-238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown-submenu menu-item-238">
+                <a href="http://www.customizr.dev/sub-normal-2/">Sub-Normal 2</a>
+                <ul class="dropdown-menu">
+                    <li id="menu-item-237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-237">
+                        <a href="http://www.customizr.dev/sub-normal-2-1/">Sub-Normal 2-1</a>
+                    </li>
+                    <li id="menu-item-236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-236">
+                        <a href="http://www.customizr.dev/sub-normal-2-2/">Sub-Normal 2-2</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</pre>
+<p>We now have two embedded unordered lists added, and need to address each property.</p>
+Given that Level 1 items were addressed with:
+<pre class="html decode:true crayon-selected" title="Generated HTML">
+.navbar.notresp .nav > li > a {}
+.navbar.notresp .nav > li > a:hover {}
+.navbar.notresp .nav > li.current-menu-item > a,.dropdown-menu > li.current-menu-ancestor > a {}
+</pre>
+Level 2+ items can be addressed with:
+<pre class="html decode:true crayon-selected" title="Generated HTML">
+.dropdown-menu > li > a {}
+.dropdown-menu > li > a:hover {}
+.dropdown-menu > li.current-menu-item > a,.dropdown-menu > li.current-menu-ancestor > a {}
+.dropdown-submenu > li > a {}
+.dropdown-submenu > li > a:hover {}
+.dropdown-submenu > li.current-menu-item > a,.dropdown-menu > li.current-menu-ancestor > a {}</pre>
+
+This results in the following coding to achieve the image above:
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+/* Navbar 2 */
+/* Sizing */
+.navbar.notresp .nav > li {
+margin: 0px -5px;                   /* Adjust top/bottom + left/right */
+}
+.navbar.notresp .nav > li > a, .navbar.notresp .nav > li > a:hover {
+border-radius: 0px 0px 0px 0px;     /* No Rounded corners */
+min-width: 100px;                   /* Fixed width */
+min-height: 30px;                   /* Fixed height */
+vertical-align: middle;             /* Align text */
+}
+/* Shading */
+.navbar.notresp .nav > li > a, ul.dropdown-menu, ul.dropdown-submenu, 
+.dropdown-menu > li > a, .dropdown-submenu > li > a, .dropdown-menu > li.current-menu-ancestor > a,
+.navbar.notresp .nav > li > a:focus, .dropdown-menu > li > a:focus, .dropdown-submenu:focus > li > a {
+border: 1px solid yellow;           /* Add a border */
+color: white;                       /* White text */
+background-color: black;           /* Change black */
+background-image: linear-gradient(to bottom, grey, black);    /* Change grey, black */
+background-image: -webkit-linear-gradient (top, grey, black); /* Change grey, black */
+background-repeat: repeat-x;        /* Add shading */
+}
+.navbar.notresp .nav > li > a:hover, .dropdown-menu > li:hover > a, .dropdown-menu > li > a:hover, .dropdown-submenu:hover > li > a, 
+.navbar.notresp .nav > li > a:focus, .dropdown-menu > li:focus > a, .dropdown-menu > li > a:focus, .dropdown-submenu:focus > li > a, 
+.navbar.notresp .nav > li.current-menu-item > a, .navbar.notresp .nav > li.current-menu-ancestor > a,
+.dropdown-menu > li.current-menu-item > a, .dropdown-menu > li.current-menu-ancestor > a,
+.dropdown-submenu > li.current-menu-ancestor > a, .dropdown-menu > li:hover > a   {
+color: yellow;                         /* Yellow Text on hover */
+background-color: darkgreen;            /* Change darkgreen */
+background-image: linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
+background-image: -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
+}
+/* Hide surrounds */
+.navbar ul.nav, ul.dropdown-menu, ul.dropdown-submenu {
+background:red;
+background-color: rgba(0, 0, 0, 0);
+border: none;
+box-shadow:none;
+}
+</pre>
+
+<h2>Other Menu Item Box changes</h2>
+
+<h3>Adding colored bars to menu item top (simple)</h3>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+/* Adds a colored bar to top of menu item */
+.navbar.notresp .nav > li > a {
+margin: 0px 5px;                            /* Separates menu items */
+border-top: 4px solid green;                /* Change [green]       */
+}
+.navbar.notresp .nav > li > a:hover {
+border-top: 4px solid yellow;               /* Change [yellow]      */
+}
+</pre>
+<h3>Adding colored bars to menu item top (intermediate)</h3>
+<p>It's more likely that the color of the menu item is dependent on the content so a more sophisticated solution is required.</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG017-Menu-Color-Bars.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG017-Menu-Color-Bars.png" alt="NG017 Menu Color Bars" class="alignnone size-full wp-image-146" /></a>
+<p>The solution is to assign a class to each menu item in Dashboard>Appearance>Menus.</p>
+<ol>
+<li>Check in screen options that 'CSS Classes' is checked</li>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG015-Screen-Options.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG015-Screen-Options.png" alt="NG015 Screen Options" class="alignnone size-full wp-image-141" /></a>
+<li>Add a list of possible classes into the CSS. Could be based on color, topic, category for example. Multiple classes are allowed</li>
+<p>Here is an example of CSS classes which might be used:</p>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.bt-home, .bt-red {border-top: 4px solid red;}
+.bt-blog, .bt-orange {border-top: 4px solid orange;}
+.bt-normal, .bt-yellow {border-top: 4px solid yellow;}
+.bt-navbar, .bt-green {border-top: 4px solid green;}
+.bt-blue {border-top: 4px solid blue;}
+.bt-indigo {border-top: 4px solid indigo;}
+.bt-violet {border-top: 4px solid violet;}
+</pre>
+<li>Assign classes to each menu item</li>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG016-Menu-Class.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG016-Menu-Class.png" alt="NG016 Menu Class" class="alignnone size-full wp-image-142" /></a>
+</ol>
+
+
+
+<h3>Adding Buttons to the Navbar</h3>
+<p>Review this <a href="http://www.themesandco.com/snippet/adding-a-button-to-the-menu/" target="_blank">Snippet </a>for more information.</p>
+
+<h3>Other default changes</h3>
+<p> If you look closely, there are a couple of minor items which may need your attention:</p>
+<ul>
+<li>Text Shadows</li>
+<li>First-letter differences</li>
+</ul>
+
+These can be removed or changed using:
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.navbar .nav > li > a, .dropdown-menu > li > a, .dropdown-submenu > li > a {
+text-shadow:        none;               /* Remove text shadow */
+}
+.navbar .nav > li > a:first-letter {
+font-size:          17px;               /* Change [17]px first letter */
+/* If default is 1em/100%, try adjusting using 1.2em/120% or 0.8em/80% for example */
+}
+</pre>
+</div>
+
+<div id="advanced">
+<h2>Advanced</h2>
+<p>This final section addresses the more Advanced features of the Customizer menu system</p>
+<div class="alert alert-info">
+<h4>Watch out for further updates - coming soon</h4>
+</div>
+
+<h3>Positioning with php</h3>
+<p>Using CSS to reposition elements will generally work, but may not always be "pixel-perfect". This is often true when moving an element outside its' parent using margin-left: -30%, for example.</p>
+<p>The more accurate solution is to use one of the many hooks available in Customizr.</p>
+<p>For more information on using hooks, actions and filters, read this <a href="http://www.themesandco.com/customizr/wordpress-actions-filters-and-hooks-a-guide-for-non-develop" target="_blank">Guide</a>.</p>
+
+<h3>Special Effects</h3>
+<p>CSS allows some special Transitions that enable us to add animation to the menu items and dropdowns. It is outside the scope of this Guide to try to show every possible animation. For novices, the recommended approach would be to look for a suitable plugin. For more advanced users who want to code it themselves, I recommend using Firebug to diagnose how it's done.</p>
+<p>To see a comprehensive set of examples of different Navbars that can be achieved with CSS, go to
+<a href="http://www.cssmenus.co.uk/" target="_blank">www.cssmenus.co.uk</a></p>
+<p>To see a comprehensive tutorial on animations that can be achieved with CSS, go to
+<a href="http://www.cssanimate.com/" target="_blank">www.cssanimate.com</a></p>
+
+<h3>Responsiveness</h3>
+<p>If you are unfamiliar with the concept of Responsiveness, then start by reviewing this <a href="http://www.themesandco.com/snippet/media-queries-responsiveness/" target="_blank">Snippet </a></p>
+<p>Twitter Bootstrap defines the point at which Customizer changes the menu structure. At 979/980px width, the menu reduces to a 3-bar button. By clicking on the button, Level 2+ menu items are revealed.</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG014-3-bar-menu.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG014-3-bar-menu.png" alt="NG014 3-bar menu" width="200" height="127" class="alignnone size-full wp-image-95" /></a>
+<p>Just like the full navbar, these menu items need to be styled using similar CSS properties. A new set of selectors is now required:</p>
+
+<pre class="lang:css decode:true crayon-selected" >
+.navbar.notresp .nav {}   /* Non-responsive */
+.navbar.resp    .nav {}   /* Responsive     */
+.navbar         .nav {}   /* Either non-resp or resp */
+</pre>
+
+<pre class="html decode:true crayon-selected" title="Generated HTML">
+    <div class="navbar resp">
+        <div class="navbar-inner" role="navigation">
+            <div class="social-block ">
+                <a class="social-icon icon-feed" title="Suscribe to my rss feed" href="http://customizr.rdellwebworks.co.uk/feed/rss/"></a>
+            </div>
+            <h2 class="span12 inside site-description">Just another rdellwebworks (DEV) site</h2>
+            <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse tc-hover-menu-wrapper">
+                <div class="menu-newmenu2-container">
+                    <ul id="menu-newmenu2-1" class="nav tc-hover-menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12">
+                            <a href="http://customizr.rdellwebworks.co.uk/home/">Home</a>
+                        </li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40">
+                            <a href="http://customizr.rdellwebworks.co.uk/blog/">Blog</a>
+                        </li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-41">
+                            <a href="#">
+                                Normal
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39">
+                                    <a href="http://customizr.rdellwebworks.co.uk/sub-normal-1/">Sub-Normal 1</a>
+                                </li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown-submenu menu-item-38">
+                                    <a href="http://customizr.rdellwebworks.co.uk/sub-normal-2/">Sub-Normal 2</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36">
+                                            <a href="http://customizr.rdellwebworks.co.uk/sub-normal-2-2/">Sub-Normal 2-2</a>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37">
+                                            <a href="http://customizr.rdellwebworks.co.uk/sub-normal-2-1/">Sub-Normal 2-1</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-23 current_page_item menu-item-25">
+                            <a href="http://customizr.rdellwebworks.co.uk/navbar-guide/">Navbar Guide</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</pre>
+
+</div>
+<p>At this point, the term 'specificity' becomes very important. For a simple explanation, try this <a href="http://css-tricks.com/specifics-on-css-specificity/" target="_blank">article</a>.</p>
+<p>When adjusting Navbar styling, you will need to decide whether the styling applies to both non-responsive and/or responsive items. For example, consider the impact of these 3 selectors:</p>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.navbar .nav > li > a {
+color:      blue;   /* Generic menu item */
+}
+.navbar.notresp .nav > li > a {
+color:      red;    /* Fullsize menu item */
+}
+.navbar.resp .nav > li > a {
+color:      green;  /* 3-bar menu item */
+}
+</pre>
+<p>Take a look at the CSS Structure for the Navbar in the Appendix and it should become clearer to you.</p>
+<p>So to complete the responsive 3-bar dropdown and the fullsize menu, the final code we'll use is:</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG018-3-bar-menu.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG018-3-bar-menu.png" alt="NG018 3-bar menu" class="alignnone size-full wp-image-154" /></a>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+/* Navbar 3 */
+/* Sizing */
+.navbar .nav > li {
+margin:             0px -5px;           /* Adjust top/bottom + left/right */
+}
+.navbar.notresp .nav > li > a, .navbar.notresp .nav > li > a:hover {
+border-radius:      0px 0px 0px 0px;    /* No Rounded corners */
+min-width:          110px;              /* Fixed width */
+min-height:         30px;               /* Fixed height */
+vertical-align:     middle;             /* Align text */
+}
+/* Shading */
+.navbar .nav > li > a, ul.dropdown-menu, ul.dropdown-submenu, 
+.dropdown-menu > li > a, .dropdown-submenu > li > a, .dropdown-menu > li.current-menu-ancestor > a,
+.navbar .nav > li > a:focus, .dropdown-menu > li > a:focus, .dropdown-submenu:focus > li > a,
+.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a  {
+border:             1px solid yellow;   /* Add a border */
+color:              white;              /* White text */
+font-weight:        bold;
+text-shadow:        none;               /* Remove text shadow */
+background-color:   black;              /* Change black */
+background-image:   linear-gradient(to bottom, grey, black);    /* Change grey, black */
+background-image:   -webkit-linear-gradient (top, grey, black); /* Change grey, black */
+background-repeat:  repeat-x;           
+}
+.navbar .nav > li > a:hover, .dropdown-menu > li:hover > a, .dropdown-menu > li > a:hover, .dropdown-submenu:hover > li > a, 
+.navbar .nav > li > a:focus, .dropdown-menu > li:focus > a, .dropdown-menu > li > a:focus, .dropdown-submenu:focus > li > a, 
+.navbar .nav > li.current-menu-item > a, .navbar .nav > li.current-menu-ancestor > a,
+.dropdown-menu > li.current-menu-item > a, .dropdown-menu > li.current-menu-ancestor > a,
+.dropdown-submenu > li.current-menu-ancestor > a, .dropdown-menu > li:hover > a   {
+color:              yellow;             /* Yellow Text on hover */
+font-weight:        bold;
+background-color:   darkgreen;          /* Change darkgreen */
+background-image:   linear-gradient(to bottom, darkgreen, #9DB67E);    /* Change darkgreen, #9DB67E Light Green */
+background-image:   -webkit-linear-gradient (top, darkgreen, #9DB67E); /* Change darkgreen, #9DB67E Light Green */
+}
+
+/* Hide surrounds on 3-bar menu */
+.navbar ul.nav, .navbar ul.dropdown-menu, .navbar ul.dropdown-submenu,
+.navbar .nav-collapse.tc-hover-menu-wrapper {
+background:         red;
+background-color:   rgba(0, 0, 0, 0);   /* Transparent */
+border:             none;
+box-shadow:         none;
+}
+/* Fixed width on 3-bar menu */
+.navbar.resp ul.nav, .navbar.resp ul.dropdown-menu, .navbar.resp ul.dropdown-submenu,
+.navbar.resp .nav-collapse.tc-hover-menu-wrapper {
+min-width:          180px;          /* Adjust to need */
+}
+</pre>
+
+<p>Another common request is to add an icon to the Menu Item:</p>
+<a href="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG019-Genericons.png"><img src="http://customizr.rdellwebworks.co.uk/wp-content/uploads/sites/12/2014/05/NG019-Genericons.png" alt="NG019 Genericons" class="alignnone size-full wp-image-166" /></a>
+<p>This solution uses the Genericons icons which can be found at <a href="http://genericons.com/#standard" target="_blank">www.genericons.com</a></p>
+<pre class="lang:css decode:true crayon-selected" title="CustomCSS or Child Theme style.css">
+.navbar .nav > li > a:before {
+display:            inline-block;
+-webkit-font-smoothing: antialiased;
+font:               normal 22px/1 'Genericons';
+vertical-align:     top;
+padding-right:      2px;
+}
+.navbar .nav > li.bt-home > a:before {
+content: '\f409';   /* Home */
+}
+.navbar .nav > li.bt-blog > a:before {
+content: '\f411';   /* Blog */
+}
+.navbar .nav > li.bt-normal > a:before {
+content: '\f304';   /* Normal */
+}
+.navbar .nav > li.bt-navbar > a:before {
+content: '\f103';   /* Navbar */
+}
+</pre>
+
+<div class="alert alert-info">
+<h4>Well that's enough for now. If there are specific questions about any of the above then please leave a Comment below, or better still, go to the <a  href="http://wordpress.org/support/theme/customizr">Forum</a> to get a solution, with a much wider audience to help fix problems. <strong>And important,  please include a link to your Site.</strong></h4>
+</div>
+
+
+<div class="summary">
+<h2>Appendix - CSS Summary</h2>
+
+<ul class="nav nav-tabs">
+<li class="active"><a href="#structure" data-toggle="tab">CSS Structure</a></li>
+<li><a href="#selector" data-toggle="tab">Selectors</a></li>
+<li><a href="#property" data-toggle="tab">Properties</a></li>
+</ul>
+
+<div id="myTabContent" class="tab-content">
+
+<div id="structure" class="tab-pane fade active in">
+
+<pre>
+.navbar.notresp (div)
+    .navbar-inner (div)
+        .nav-collapse (div)
+            .nav(ul)
+
+                /* Level 1 - Normal */
+                .menu-item (li)
+                    Menu Link (a)
+                .menu-item (li)
+                    Menu Link (a)
+                .menu-item.dropdown (li)
+                    Menu Link (a)
+                        .caret (b)
+                    .dropdown-menu (ul)
+
+                        /* Level 2 - Subnormal 1 */
+                        .menu-item (li)
+                            Menu Link (a)
+                        .menu-item.dropdown-submenu (li)
+                            Menu Link (a)
+                            .dropdown-menu (ul)
+
+                                /* Level 3 - Subnormal 1-1 */
+                                .menu-item (li)
+                                    Menu Link (a)
+                                .menu-item (li)
+                                    Menu Link (a)
+
+
+.navbar.resp (div)
+    .navbar-inner (div)
+        .btn (button)
+        .nav-collapse (div)
+            .nav(ul)
+
+                /* Level 1 - Normal */
+                .menu-item (li)
+                    Menu Link (a)
+                .menu-item (li)
+                    Menu Link (a)
+                .menu-item.dropdown (li)
+                    Menu Link (a)
+                        .caret (b)
+                    .dropdown-menu (ul)
+
+                        /* Level 2 - Subnormal 1 */
+                        .menu-item (li)
+                            Menu Link (a)
+                        .menu-item.dropdown-submenu (li)
+                            Menu Link (a)
+                            .dropdown-menu (ul)
+
+                                /* Level 3 - Subnormal 1-1 */
+                                .menu-item (li)
+                                    Menu Link (a)
+                                .menu-item (li)
+                                    Menu Link (a)
+</pre>
+
+</div>
+
+<div id="selector" class="tab-pane fade">
+
+<h5> Generic</h5>
+<table class="table table-striped table-condensed">
+<tbody>
+<tr>
+<td class="col1">.navbar navbar-inner</td>
+<td class="col2">Navbar Box</td>
+</tr>
+<tr>
+<td class="col1">.navbar .nav > li > a</td>
+<td class="col2">Menu item</td>
+</tr>
+<tr>
+<td class="col1">.navbar .nav > li > a:first-letter</td>
+<td class="col2">Menu item - First Letter</td>
+</tr>
+<tr>
+<td class="col1">.navbar .nav > li > a:hover</td>
+<td class="col2">Menu item - Mouse Hover</td>
+</tr>
+<tr>
+<td class="col1">.navbar .nav > li > a:hover:first-letter</td>
+<td class="col2">Menu item - First Letter/Mouse Hover</td>
+</tr>
+<tr>
+<td class="col1">.navbar .nav > li > a:active</td>
+<td class="col2">Menu item - Item selected</td>
+</tr>
+<tr>
+<td class="col1">.navbar .nav > li > a:active:first-letter,</td>
+<td class="col2">Menu item - Item selected/Mouse Hover</td>
+</tr>
+<tr>
+<td class="col1">.navbar .nav > li.current-menu-item > a</td>
+<td class="col2">Menu item - Item selected</td>
+</tr>
+<tr>
+<td class="col1">.navbar .nav > li.current-menu-ancestor > a</td>
+<td class="col2">Menu item - Ancestor Item selected</td>
+</tr>
+<tr>
+<td class="col1">.navbar .dropdown-menu > li > a</td>
+<td class="col2">Level 2 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar .dropdown-menu > li.current-menu-item > a</td>
+<td class="col2">Level 2 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar .dropdown-menu > li.current-menu-ancestor > a</td>
+<td class="col2">Level 2 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar .dropdown-menu > li > a:hover</td>
+<td class="col2">Level 2 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar .dropdown-menu > li > a:focus</td>
+<td class="col2">Level 2 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar ul.nav li.dropdown:hover > ul.dropdown-menu</td>
+<td class="col2">Level 2 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar .dropdown-submenu > li > a</td>
+<td class="col2">Level 3 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar .dropdown-submenu > li.current-menu-item > a</td>
+<td class="col2">Level 3 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar .dropdown-submenu > li.current-menu-ancestor > a</td>
+<td class="col2">Level 3 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar .dropdown-submenu > li > a:hover</td>
+<td class="col2">Level 3 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar .dropdown-submenu > li > a:focus</td>
+<td class="col2">Level 3 Menu Items</td>
+</tr>
+<tr>
+<td class="col1">.navbar ul.nav li.dropdown:hover > ul.dropdown-menu</td>
+<td class="col2">Level 3 Menu Items</td>
+</tr>
+</tbody>
+</table>
+
+<h5> Non-responsive</h5>
+<table class="table table-striped table-condensed">
+<tbody>
+<tr>
+<td class="col1">.navbar.notresp navbar-inner</td>
+<td class="col2">Navbar Box</td>
+</tr>
+<tr>
+<td class="col1">.navbar.notresp .nav > li > a</td>
+<td class="col2">Menu item</td>
+</tr>
+<tr>
+<td class="col1">.navbar.notresp *</td>
+<td class="col2">See Generic</td>
+</tr>
+</tbody>
+</table>
+
+<h5> Responsive</h5>
+<table class="table table-striped table-condensed">
+<tbody>
+<tr>
+<td class="col1">.navbar.resp navbar-inner</td>
+<td class="col2">Navbar Box</td>
+</tr>
+<tr>
+<td class="col1">.navbar.resp .nav > li > a</td>
+<td class="col2">Menu item</td>
+</tr>
+<tr>
+<td class="col1">.navbar.notresp *</td>
+<td class="col2">See Generic</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<div id="property" class="tab-pane fade">
+<h5> Styling</h5>
+<table class="table table-striped table-condensed">
+<tbody>
+<tr>
+<td class="col1">font-family: "[Open Sans]" ;</td>
+<td class="col2">Font</td>
+</tr>
+<tr>
+<td class="col1">font-size: [0]px|[0]em|[0]% ;</td>
+<td class="col2">Font Size</td>
+</tr>
+<tr>
+<td class="col1">font-weight: normal|bold| ;</td>
+<td class="col2">Font Weight</td>
+</tr>
+<tr>
+<td class="col1">color: name|#nnnnnn ;</td>
+<td class="col2">Text Color</td>
+</tr>
+<tr>
+<td class="col1">background-color: name|#nnnnnn ;</td>
+<td class="col2">Background Color</td>
+</tr>
+<tr>
+<td class="col1">background-image: linear-gradient(to bottom, name|#nnnnnn, name|#nnnnnn);</td>
+<td class="col2">Gradient Background</td>
+</tr>
+<tr>
+<td class="col1">background-image: -webkit-linear-gradient (top, name|#nnnnnn, name|#nnnnnn);</td>
+<td class="col2">Safari/Chrome specific</td>
+</tr>
+<tr>
+<td class="col1">background-repeat: repeat-x|repeat-y|repeat-xy;</td>
+<td class="col2">Repeat in x/y dimensions</td>
+</tr>
+<tr>
+<td class="col1">border|border-top|border-right|border-bottom|border-right: [0|(-)n]px solid name|#nnnnnn;</td>
+<td class="col2">Border size/pattern/color</td>
+</tr>
+<tr>
+<td class="col1">border-radius: [0|(-)n]px [0|(-)n]px [0|(-)n]px [0|(-)n]px;</td>
+<td class="col2">Rounded corners</td>
+</tr>
+<tr>
+</tbody>
+</table>
+
+<h5> Positioning</h5>
+<table class="table table-striped table-condensed">
+<tbody>
+<tr>
+<td class="col1">margin|margin-top|margin-right|margin-bottom|margin-right: [0|(-)n]px;</td>
+<td class="col2">Margins</td>
+</tr>
+<tr>
+<td class="col1">padding|padding-top|padding-right|padding-bottom|padding-right: [0|(-)n]px;</td>
+<td class="col2">Padding</td>
+</tr>
+<tr>
+<td class="col1">position: relative|absolute</td>
+<td class="col2">Positioning an element</td>
+</tr>
+<tr>
+<td class="col1">top|bottom: [0|(-)n]px;</td>
+<td class="col2">Adjusting y position</td>
+</tr>
+<tr>
+<td class="col1">left|right: [0|(-)n]%;</td>
+<td class="col2">Adjusting x position</td>
+</tr>
+</tbody>
+</table>
+
+<h5> Display</h5>
+<table class="table table-striped table-condensed">
+<tbody>
+<tr>
+<td class="col1">display: none|block|inline;</td>
+<td class="col2">How element is displayed</td>
+</tr>            
+<tr>
+<td class="col1">min-height|height|max-height: [0|(-)n]px;</td>
+<td class="col2">Height/Min/Max</td>
+</tr>
+<tr>
+<td class="col1">min-width|width|max-width: [0|(-)n]%;</td>
+<td class="col2">Width/Min/Max</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<h2>Credits: Dave Bardell (@rdellconsulting)</h2>
+</div>
